@@ -1,4 +1,4 @@
-# @here/harp-fontcatalog-generator [![Build Status](https://travis-ci.com/heremaps/harp-fontcatalog-generator.svg?branch=master)](https://travis-ci.com/heremaps/harp-fontcatalog-generator)
+# @xyzmaps/harp-fontcatalog-generator 
 
 This module contains the necessary scripts and resources to generate a font catalog to be used with the `harp.gl` renderer.
 It includes the [NotoSans-Regular](`resources/NotoSans-Regular.ttf`) font as part of the package because the script uses a glyph from that font as a fallback, in case some glyph from the font that it processes is missing.
@@ -27,13 +27,13 @@ to download and install all required packages and set up the yarn workspace.
 You can install it with `yarn` or with `npm`:
 
 ```sh
-yarn add @here/harp-fontcatalog-generator
+yarn add @xyzmaps/harp-fontcatalog-generator
 ```
 
 or
 
 ```sh
-npm install @here/harp-fontcatalog-generator
+npm install @xyzmaps/harp-fontcatalog-generator
 ```
 
 ### Run unit tests in Node.js environment
@@ -46,7 +46,7 @@ yarn test
 
 ### FontCatalog Description
 
-To generate your own __FontCatalog__ assets to use with [harp.gl](https://github.com/heremaps/harp.gl), you need to supply a __JSON__ file containing your __FontCatalog__ description. This file is composed of the following paremeters:
+To generate your own __FontCatalog__ assets to use with [XYZmaps:threejsl](https://github.com/xyzmaps/harp.gl), you need to supply a __JSON__ file containing your __FontCatalog__ description. This file is composed of the following paremeters:
 
 * __name__: FontCatalog's name (Default: __Default__).
 * __size__: FontCatalog's glyph pixel size (Default: __32__).
@@ -95,19 +95,23 @@ Which will output assets in the following directory structure:
 └── <NAME>_FontCatalog.json
 ```
 
-To use these assets with your [harp.gl](https://github.com/heremaps/harp.gl) theme files, copy all of them to your `resources` folder and reference them from the theme with a __relative path__:
+To use these assets with your [harp.gl](https://github.com/xyzmaps/harp.gl) theme files, copy all of them to your `resources` folder and reference them from the theme with a __relative path__:
 
 ```json
-"fontCatalogs": [
+{
+  "fontCatalogs" : [
     {
-        "name": "<NAME>",
-        "url": "./<NAME>_FontCatalog.json"
+      "name": "<NAME>",
+      "url": "./<NAME>_FontCatalog.json"
     }
-]
+  ]
+}
 ```
 
 
 ## License
+
+Copyright (C) 2023 XYZ maps contributors
 
 Copyright (C) 2018-2019 HERE Europe B.V.
 

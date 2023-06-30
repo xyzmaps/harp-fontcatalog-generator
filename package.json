@@ -1,5 +1,5 @@
 {
-  "name": "@here/harp-fontcatalog-generator",
+  "name": "@xyzmaps/harp-fontcatalog-generator",
   "version": "0.1.4",
   "description": "Scripts used to generate a font catalog for harp.gl",
   "scripts": {
@@ -11,7 +11,7 @@
   "bin": "./scripts/harp-fontcatalog-generator.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/heremaps/harp-fontcatalog-generator.git"
+    "url": "https://github.com/xyzmaps/harp-fontcatalog-generator.git"
   },
   "author": {
     "name": "HERE Europe B.V.",
@@ -38,7 +38,7 @@
     "@types/node": "^14.0.10",
     "chai": "^4.2.0",
     "cross-env": "^7.0.2",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "ts-mocha": "^7.0.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
