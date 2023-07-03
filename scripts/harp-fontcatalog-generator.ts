@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /**
+ * Copyright (C) 2023- XYZ maps contributors
  * Copyright (C) 2018-2019 HERE Europe B.V.
  * Licensed under Apache 2.0, see full license in LICENSE
  * SPDX-License-Identifier: Apache-2.0
@@ -14,6 +15,7 @@ namespace FontCatalogScript {
     const minimist = require("minimist");
     const fs = require("fs");
     const path = require("path");
+    const process = require('process');
     const mkpath = require("mkpath");
     const fontkit = require("fontkit");
     const generateBMFont = require("msdf-bmfont-xml");
@@ -21,7 +23,7 @@ namespace FontCatalogScript {
     // tslint:enable
 
     // tslint:disable:no-console
-    let isVerbose = false;
+    let isVerbose = true;
     let runningHandle: number | undefined;
     function isRunning() {
         console.log("\n[Process Still Running - Please Wait]");
@@ -484,14 +486,24 @@ namespace FontCatalogScript {
         }
 
         // Generate BMFont assets for the replacement character.
+        console.log("INFO -- createReplacementAssets ");
         await createReplacementAssets(outputPath);
 
         // Wrote the font catalog to a file.
+        console.log("INFO -- stringify font catalog ");
+
         const fontCatalogData = JSON.stringify(fontCatalog);
+        console.log("INFO -- write font catalog ");
+
         fs.writeFileSync(
             path.resolve(outputPath, `${fontCatalog.name}_FontCatalog.json`),
             fontCatalogData
         );
+        console.log("INFO -- done writing font catalog ");
+        console.log("INFO -- make sure to exit process");
+
+        process.exit(0);
+
     }
 }
 

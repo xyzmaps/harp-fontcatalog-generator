@@ -1,6 +1,6 @@
 {
   "name": "@xyzmaps/harp-fontcatalog-generator",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Scripts used to generate a font catalog for harp.gl",
   "scripts": {
     "pretest": "ts-node ./scripts/unicode-ranges-generator.ts",
@@ -34,12 +34,12 @@
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^14.0.10",
     "chai": "^4.2.0",
     "cross-env": "^7.0.2",
     "mocha": "^10.2.0",
-    "ts-mocha": "^7.0.0",
+    "ts-mocha": "^10.0.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   }
